@@ -1,4 +1,4 @@
 import { firstSequence, secondSequence } from './mock';
-import { fillTable } from './table';
+import { alignment } from './alignment';
 
-console.log(fillTable(firstSequence, secondSequence));
+console.log(alignment(firstSequence, secondSequence));
