@@ -8,8 +8,8 @@ describe('DNA tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'AATCG',
-            secondSeq: 'AA-CG',
+            seq1: 'AATCG',
+            seq2: 'AA-CG',
             score: 10
         });
     });
@@ -20,8 +20,8 @@ describe('DNA tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: '-GT-ACAACG-',
-            secondSeq: 'AATCGTAGCGA',
+            seq1: '-GT-ACAACG-',
+            seq2: 'AATCGTAGCGA',
             score: -26
         });
     });
@@ -32,8 +32,8 @@ describe('DNA tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'GTACAACGTTA',
-            secondSeq: 'AATCGTAGCGA',
+            seq1: 'GTACAACGTTA',
+            seq2: 'AATCGTAGCGA',
             score: -17
         });
     });
@@ -44,8 +44,8 @@ describe('DNA tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'GCGCGTGCGCGGAAGGAGCCAAGGTGAAGTTGTAGCAGTGTGTCAGAAGAGGTGCGTGGCA-CCAT-GCTGTCCCCCGAGGCGGA-GCGGGTGCTG-C-GGTACCTGGTCGAA-GT-AG-AGGAGTTG',
-            secondSeq: 'G-AC-T-TGTGGAA-CCTACTTCCTGAA--AATAACCTTCTGTCCTCCGAGCT-CTCCGCACCCGTGGATGACCTGC-TCCCGTACACAGATGTTGCCACCTGGCTGGATGAATGTCCGAATGAAGCG',
+            seq1: 'GCGCGTGCGCGGAAGGAGCCAAGGTGAAGTTGTAGCAGTGTGTCAGAAGAGGTGCGTGGCA-CCAT-GCTGTCCCCCGAGGCGGA-GCGGGTGCTG-C-GGTACCTGGTCGAA-GT-AG-AGGAGTTG',
+            seq2: 'G-AC-T-TGTGGAA-CCTACTTCCTGAA--AATAACCTTCTGTCCTCCGAGCT-CTCCGCACCCGTGGATGACCTGC-TCCCGTACACAGATGTTGCCACCTGGCTGGATGAATGTCCGAATGAAGCG',
             score: -41
         });
     });

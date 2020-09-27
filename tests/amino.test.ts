@@ -8,8 +8,8 @@ describe('Amino tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'ARDCDWVKMF',
-            secondSeq: 'I-G-KWVKDN',
+            seq1: 'ARDCDWVKMF',
+            seq2: 'I-G-KWVKDN',
             score: -9
         });
     });
@@ -20,8 +20,8 @@ describe('Amino tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'ELKSSAMFP',
-            secondSeq: 'FSHWPDQCK',
+            seq1: 'ELKSSAMFP',
+            seq2: 'FSHWPDQCK',
             score: -15
         });
     });
@@ -32,8 +32,8 @@ describe('Amino tests', () => {
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
         expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            firstSeq: 'SP--E--TVIHS--GWVIWRELFSH-WPDQCKL-LFGDWFAWIHWTYLVYYSAGPPCQGQSDIVVMMQKKLRTNFCQCYKYWYQ',
-            secondSeq: 'SPSDQFFTVIHSCLYWVIWRDLMSHLFMNGAAIDIHWTWDSIAIGPPLV-YPIEEVFAGPSTIVVMMQKMLRTNFCQCYKPWYQ',
+            seq1: 'SP--E--TVIHS--GWVIWRELFSH-WPDQCKL-LFGDWFAWIHWTYLVYYSAGPPCQGQSDIVVMMQKKLRTNFCQCYKYWYQ',
+            seq2: 'SPSDQFFTVIHSCLYWVIWRDLMSHLFMNGAAIDIHWTWDSIAIGPPLV-YPIEEVFAGPSTIVVMMQKMLRTNFCQCYKPWYQ',
             score: 116
         });
     });
