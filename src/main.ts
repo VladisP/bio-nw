@@ -1,4 +1,7 @@
-import { firstSequence, secondSequence } from './mock';
-import { alignment } from './alignment';
+import { align } from './core/alignment';
+import { getScoreFunc } from './score/score';
 
-console.log(alignment(firstSequence, secondSequence));
+const firstSequence = 'ARDCDWVKMF';
+const secondSequence = 'IGKWVKDN';
+
+console.log(align(firstSequence, secondSequence, getScoreFunc(firstSequence, secondSequence, -10)));
