@@ -20,6 +20,9 @@
   "plugins": [
     "@typescript-eslint"
   ],
+  "ignorePatterns": [
+    "fasta.*.js"
+  ],
   "rules": {
     "indent": [
       "error",

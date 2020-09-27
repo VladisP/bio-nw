@@ -5,9 +5,18 @@
   "scripts": {
     "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --no-fix",
     "test": "jest",
-    "start": "tsc --project tsconfig.json && node ./dist/src/main.js"
+    "build": "tsc --project tsconfig.json",
+    "start": "npm run build && node ./dist/src/main.js"
+  },
+  "bin": {
+    "bio-cli": "dist/src/main.js"
+  },
+  "dependencies": {
+    "commander": "^6.1.0",
+    "fasta-parser": "^0.1.0"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.2",
     "@types/jest": "^26.0.14",
     "@types/node": "^14.11.2",
     "@typescript-eslint/eslint-plugin": "^4.2.0",

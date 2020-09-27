@@ -3,8 +3,8 @@ import { ScoreFunc, Direction } from '../common/types';
 import { GAP } from '../common/constants';
 
 type AlignmentResult = {
-    firstSeq: string;
-    secondSeq: string;
+    seq1: string;
+    seq2: string;
     score: number;
 }
 
@@ -42,8 +42,8 @@ export const align = (firstSeq: string, secondSeq: string, scoreFunc: ScoreFunc)
     }
 
     return {
-        firstSeq: alignmentFirst,
-        secondSeq: alignmentSecond,
+        seq1: alignmentFirst,
+        seq2: alignmentSecond,
         score,
     };
 };
