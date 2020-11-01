@@ -1,14 +1,8 @@
 import { createTable } from './table';
-import { ScoreFunc, Direction } from '../common/types';
+import { ScoreFunc, Direction, AlignmentResult } from '../common/types';
 import { GAP } from '../common/constants';
 
-type AlignmentResult = {
-    seq1: string;
-    seq2: string;
-    score: number;
-}
-
-export const align = (firstSeq: string, secondSeq: string, scoreFunc: ScoreFunc): AlignmentResult => {
+export const nwAlign = (firstSeq: string, secondSeq: string, scoreFunc: ScoreFunc): AlignmentResult => {
     const table = createTable(firstSeq, secondSeq, scoreFunc);
     const score = table[firstSeq.length][secondSeq.length].score;
 

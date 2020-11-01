@@ -1,6 +1,6 @@
-# Bioinformatics | Needleman-Wunsch
+# Bioinformatics
 
-CLI for alignment biological sequences
+CLI for alignment biological sequences by Needleman-Wunsch algorithm
 
 ## Install
 
@@ -16,6 +16,7 @@ CLI for alignment biological sequences
 Options:
   -g, --gap <gap>      Gap Penalty
   -o, --output <file>  Path to output file
+  --hirschberg         Uses Hirschberg's algorithm
   -h, --help           display help for command
 ```
 

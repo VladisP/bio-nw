@@ -1,16 +1,15 @@
-import { getScoreFunc } from '../src/score/score';
-import { align } from '../src/core/alignment';
+import { getScoreFunc } from '../../src/score/score';
+import { hirschbergAlign } from '../../src/hirschberg/hirschberg';
 
-describe('Amino tests', () => {
+describe('Hirschberg Amino tests', () => {
     it('test 1', () => {
         const firstSeq = 'ARDCDWVKMF';
         const secondSeq = 'IGKWVKDN';
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
-        expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
+        expect(hirschbergAlign(firstSeq, secondSeq, sf)).toStrictEqual({
             seq1: 'ARDCDWVKMF',
             seq2: 'I-G-KWVKDN',
-            score: -9
         });
     });
 
@@ -19,10 +18,9 @@ describe('Amino tests', () => {
         const secondSeq = 'FSHWPDQCK';
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
-        expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
+        expect(hirschbergAlign(firstSeq, secondSeq, sf)).toStrictEqual({
             seq1: 'ELKSSAMFP',
             seq2: 'FSHWPDQCK',
-            score: -15
         });
     });
 
@@ -31,10 +29,9 @@ describe('Amino tests', () => {
         const secondSeq = 'SPSDQFFTVIHSCLYWVIWRDLMSHLFMNGAAIDIHWTWDSIAIGPPLVYPIEEVFAGPSTIVVMMQKMLRTNFCQCYKPWYQ';
         const sf = getScoreFunc(firstSeq, secondSeq, -10);
 
-        expect(align(firstSeq, secondSeq, sf)).toStrictEqual({
-            seq1: 'SP--E--TVIHS--GWVIWRELFSH-WPDQCKL-LFGDWFAWIHWTYLVYYSAGPPCQGQSDIVVMMQKKLRTNFCQCYKYWYQ',
+        expect(hirschbergAlign(firstSeq, secondSeq, sf)).toStrictEqual({
+            seq1: 'SP-E---TVIHSG--WVIWRELFSH-WPDQCKL-LFGDWFAWIHWTYLVYYSAGPPCQGQSDIVVMMQKKLRTNFCQCYKYWYQ',
             seq2: 'SPSDQFFTVIHSCLYWVIWRDLMSHLFMNGAAIDIHWTWDSIAIGPPLV-YPIEEVFAGPSTIVVMMQKMLRTNFCQCYKPWYQ',
-            score: 116
         });
     });
 });

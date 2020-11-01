@@ -20,11 +20,13 @@ export class CommandBuilder {
             .description('Aligns two biological sequences')
             .option('-g, --gap <gap>', 'Gap Penalty')
             .option('-o, --output <file>', 'Path to output file')
+            .option('--hirschberg', 'Uses Hirschberg\'s algorithm')
             .action((firstFilePath, secondFilePath, options: { [key: string]: string }) => {
                 executor({
                     firstFilePath: firstFilePath as string,
                     secondFilePath: secondFilePath as string,
                     outputFilePath: options['output'],
+                    hirschberg: Boolean(options['hirschberg']),
                     gap: Number(options['gap'])
                 });
             });
