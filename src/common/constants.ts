@@ -1,12 +1,16 @@
-type BlosumDict = {
+export const GAP = '-';
+
+export const M = 'M';
+
+export const I = 'I';
+
+export const D = 'D';
+
+export const BLOSUM62: {
     [key: string]: {
         [key: string]: number
     }
-}
-
-export const GAP = '-';
-
-export const BLOSUM62: BlosumDict = {
+} = {
     A: {
         A: 4,
         R: -1,

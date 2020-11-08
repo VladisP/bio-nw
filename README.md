@@ -14,10 +14,10 @@ CLI for alignment biological sequences by Needleman-Wunsch algorithm
 
 ```
 Options:
-  -g, --gap <gap>      Gap Penalty
-  -o, --output <file>  Path to output file
-  --hirschberg         Uses Hirschberg's algorithm
-  -h, --help           display help for command
+  --open-gap <openGap>      Open gap penalty (default = -10)
+  --extend-gap <extendGap>  Extend gap penalty (default = -1)
+  -o, --output <file>       Path to output file
+  -h, --help                Display help for command
 ```
 
 ## Run tests

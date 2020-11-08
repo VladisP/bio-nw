@@ -2,22 +2,29 @@ export type ProgramInput = {
     firstFilePath: string;
     secondFilePath?: string;
     outputFilePath?: string;
-    hirschberg?: boolean;
-    gap?: number;
+    gapOpen: number;
+    gapExtend: number;
 }
 
 export type AlignmentResult = {
     seq1: string;
     seq2: string;
-    score?: number;
+    score: number;
 }
 
-export interface ScoreFunc {
-    (a: string, b: string): number;
+export type PrimaryItem = {
+    score: number;
+    ancestor?: 'M' | 'I' | 'D';
 }
 
-export enum Direction {
-    DIAG = 'DIAG',
-    LEFT = 'LEFT',
-    TOP = 'TOP'
+export type TableItem = {
+    M: PrimaryItem;
+    I: PrimaryItem;
+    D: PrimaryItem;
+}
+
+export type ScoreMetrics = {
+    scoreFunc: (a: string, b: string) => number;
+    openGap: number;
+    extendGap: number;
 }
